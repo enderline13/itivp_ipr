@@ -7,14 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const imagesToDisplay = 3;
     let searchQuery = '';
 
-    // В обработчике DOMContentLoaded:
     const searchForm = document.getElementById('search-form');
     searchForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       searchQuery = document.getElementById('search-input').value.trim().toLowerCase();
       gallery.innerHTML = '';
       currentIndex = 0;
-      await loadImages(true); // Перезагрузка с учетом фильтра
+      await loadImages(true); 
     });
     
     // Модифицируем loadImages:
@@ -24,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const response = await fetch('images.json');
         const data = await response.json();
         
-        // Фильтрация по поисковому запросу
         allImages = data.filter(img => 
           img.description?.toLowerCase().includes(searchQuery) || 
           img.tags?.some(tag => tag.includes(searchQuery))
@@ -52,9 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
         imgContainer.classList.add('image-container');
   
         const img = document.createElement('img');
-        img.dataset.src = image.url; // Используем data-src для ленивой загрузки
+        img.dataset.src = image.url; 
         img.alt = image.description || 'Изображение';
-        img.style.opacity = '0'; // Скрываем изображение до загрузки
+        img.style.opacity = '0'; 
   
         imgContainer.appendChild(img);
         imagesToAppend.push(img);
@@ -63,7 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
         currentIndex++;
       }
   
-      // Инициализируем ленивую загрузку только для новых изображений
       lazyLoadImages(imagesToAppend);
     }
   
@@ -72,17 +69,17 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             const img = entry.target;
-            img.src = img.dataset.src; // Загружаем изображение
+            img.src = img.dataset.src;
             img.onload = () => {
-              img.style.opacity = '1'; // Показываем изображение после загрузки
+              img.style.opacity = '1'; 
             };
             img.onerror = () => {
-              img.style.display = 'none'; // Скрываем изображение при ошибке
+              img.style.display = 'none'; 
             };
             observer.unobserve(img);
           }
         });
-      }, { rootMargin: '0px 0px 200px 0px' }); // Увеличиваем отступ снизу для ранней загрузки
+      }, { rootMargin: '0px 0px 200px 0px' }); 
   
       images.forEach(img => observer.observe(img));
     }
