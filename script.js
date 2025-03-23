@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     let allImages = [];
     let currentIndex = 0;
-    const imagesToDisplay = 3;
+    const imagesToDisplay = 35;
     let searchQuery = '';
 
     const searchForm = document.getElementById('search-form');
