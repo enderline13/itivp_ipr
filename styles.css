@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  header {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  header h1 {
+    margin-bottom: 10px;
+  }
+  
+  /* Поисковая форма */
+.search-form {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  #search-input {
+    width: 100%;
+    padding: 12px 45px 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+  }
+  
+  #search-input:focus {
+    outline: none;
+    border-color: #007BFF;
+  }
+  
+  .search-form button {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  @media (max-width: 480px) {
+    .search-form {
+      padding: 0 15px;
+    }
+    
+    #search-input {
+      padding: 10px 40px 10px 12px;
+      font-size: 14px;
+    }
+  }
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+  }
+  
+  .gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 20px;
+    display: none;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    #search-input {
+      width: 100%;
+    }
+  }

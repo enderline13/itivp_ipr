@@ -1,0 +1,17 @@
+[
+    {
+      "url": "images/mountains.webp",
+      "description": "Снежные вершины Гималаев",
+      "tags": ["горы", "природа", "зима"]
+    },
+    {
+      "url": "images/forest.webp",
+      "description": "Тропический лес в Бразилии",
+      "tags": ["лес", "деревья", "зелень"]
+    },
+    {
+      "url": "images/ocean.jpg",
+      "description": "Бирюзовые волны океана",
+      "tags": ["вода", "пляж", "лето"]
+    }
+  ]
