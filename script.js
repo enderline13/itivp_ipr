@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
       await loadImages(true); 
     });
     
-    // Модифицируем loadImages:
     async function loadImages(reset = false) {
       try {
         showLoading();
